@@ -1,4 +1,11 @@
 const express = require('express');
+const {
+    getWorkouts,
+    getWorkout,
+    createWorkout,
+    deleteWorkout,
+    updateWorkout
+} = require('../controllers/workoutController');
 
 // create an instance of router
 const router = express.Router();
