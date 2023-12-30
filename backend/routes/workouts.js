@@ -3,8 +3,19 @@ const express = require('express');
 // create an instance of router
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.json({ message: 'Hello World!' });
-});
+// GET all workouts
+router.get('/', getWorkouts)
 
-module.exports = router;
+// GET a single workout
+router.get('/:id', getWorkout)
+
+// POST a new workout
+router.post('/', createWorkout)
+
+// DELETE a workout
+router.delete('/:id', deleteWorkout)
+
+// UPDATE a workout
+router.patch('/:id', updateWorkout)
+
+module.exports = router
